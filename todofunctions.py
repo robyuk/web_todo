@@ -24,16 +24,18 @@ def get_userArg(userAction=""):  # Return the user argument to a userAction
 def confirmYN(text="Confirm"):
     """ Asks the user to confirm.  Returns True if the answer is Yes, and False if the answer is no"""
     while True:
-        confirm = input(text + " (Y/N)? ").strip().lower()
         try:
-            match confirm[0]:
-                case 'y':
-                    return True
-                case 'n':
-                    return False
+            confirm = input(text + " (Y/N)? ").strip().lower()[0]
         except:
             print("Please answer yes or no.")
             continue
+
+        match confirm:
+            case 'y':
+                return True
+            case 'n':
+                return False
+
 
 
 def getTodoList(filename=TODO_FILE, display=True):
