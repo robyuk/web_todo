@@ -30,11 +30,12 @@ def confirmYN(text="Confirm"):
             print("Please answer yes or no.")
             continue
 
-        match confirm:
-            case 'y':
-                return True
-            case 'n':
-                return False
+        if confirm == 'y':
+            return True
+        elif confirm == 'n':
+            return False
+        else:
+            print("Please answer yes or no.")
 
 
 
@@ -71,3 +72,4 @@ def write_todos(todos=TODO_LIST):
 if __name__ == '__main__':
     print("Hello from todofunctions")
     print(getTodoList())
+    print(confirmYN())
